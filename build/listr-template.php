@@ -7,6 +7,7 @@
   <div class="<?php echo $container.$container_style ?>">
 <?php is_error($options) ?>
 <?php echo $breadcrumbs?>
+<h1>Notes Sharing</h1>
 <?php echo $search ?>
 <?php echo $responsive_open?>
       <table id="listr-table" class="table <?php echo $options['bootstrap']['table_style']?>">
