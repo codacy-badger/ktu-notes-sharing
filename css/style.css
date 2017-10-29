@@ -74,18 +74,18 @@ h1, h2, h3, h4, h5, h6{
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
+  from { bottom:-100px; opacity:0 }
   to { bottom:0px; opacity:1 }
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
   to{ bottom:0; opacity:1 }
 }
 
 /***********************************
 ************************************
-HEADER 
+HEADER
 ************************************
 ***********************************/
 .header{
@@ -105,7 +105,7 @@ HEADER
 .navbar-default {
     background-color: transparent;
     border:0px;
-    padding: 20px 0; 
+    padding: 20px 0;
     transition: all 0.3s;
 }
 
@@ -115,7 +115,7 @@ HEADER
 }
 
 .top-nav-collapse {
-    padding: 0; 
+    padding: 0;
     background: rgba(64,75,97, 0.9);
 }
 
@@ -368,6 +368,8 @@ ul.service-list li i
     margin:0;
     padding:0;
     position:relative;
+		align-content: center;
+		align-items: center;
     cursor:pointer;
 }
 .portfolio-item figure img {
@@ -379,6 +381,7 @@ ul.service-list li i
 .portfolio-item figure figcaption {
     display:block;
     position:absolute;
+		align-content: center;
     z-index:5;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -388,6 +391,8 @@ ul.service-list li i
     font-family: 'Fira Sans', sans-serif;
     color:#fff;
     font-size:20px;
+		align-self: center;
+		align-content: center;
     text-align:left;
     padding-bottom:15px;
 }
@@ -676,7 +681,7 @@ cta
     background-color: rgb(73, 84, 105);
 }
 .cta .cta-info {
-    
+
     width: 100%;
     float: left;
     padding: 30px 25px 30px 15px;

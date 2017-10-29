@@ -10,7 +10,7 @@
 
 <?php echo $search ?>
 <?php echo $responsive_open?>
-<h1>Hello</h1>
+<h1>Get Your Notes Here</h1>
       <table id="listr-table" class="table <?php echo $options['bootstrap']['table_style']?>">
         <thead>
           <tr>

@@ -55,8 +55,8 @@
                 <h2 class="bnr-sub-title">KTU Notes</h2>
                 <p class="bnr-para">Description</p>
                 <div class="brn-btn">
-                  <a href="#" class="btn btn-download">Get Notes</a>
-                  <a href="#" class="btn btn-more">Upload Notes</a>
+                  <a href="#portfolio" class="btn btn-download">Get Notes</a>
+                  <a href="#service" class="btn btn-more">Upload Notes</a>
                 </div>
                 <div class="overlay-detail">
                   <a href="#feature"><i class="fa fa-angle-down"></i></a>
@@ -79,18 +79,21 @@
                 <hr class="bottom-line">
               </div>
               <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-                <figure>
-                  <img src="img/port01.jpg" class="img-responsive">
+                <figure href="notes/S1/">
+                  <img src="img/port01.jpg" href="notes/S1/" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 1</h2>
+                    <h2>Semester 1 Notes<br>
+                    <a href="notes/S1/">Get Here</a></h2>
                   </figcaption>
+
                 </figure>
               </div>
               <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port02.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 2</h2>
+                    <h2>Semester 2 Notes<br>
+                    <a href="notes/S2/">Get Here</a></h2>
                   </figcaption>
                 </figure>
               </div>
@@ -98,7 +101,8 @@
                 <figure>
                   <img src="img/port03.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 3</h2>
+                    <h2>Semester 3 Notes<br>
+                    <a href="notes/S3/">Get Here</a></h2>
                   </figcaption>
                 </figure>
               </div>
@@ -106,7 +110,8 @@
                 <figure>
                   <img src="img/port04.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 4</h2>
+                    <h2>Semester 4 Notes<br>
+                    <a href="notes/S4/">Get Here</a></h2>
                   </figcaption>
                 </figure>
               </div>
@@ -114,7 +119,8 @@
                 <figure>
                   <img src="img/port05.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 5</h2>
+                    <h2>Semester 5 Notes<br>
+                    <a href="notes/S5/">Get Here</a></h2>
                   </figcaption>
                 </figure>
               </div>
