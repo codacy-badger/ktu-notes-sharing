@@ -146,7 +146,7 @@
             <div class="service-item">
               <h3>Select<span>Sem</span></h3>
               <select class="form-control" name="semester">
-                <<option value="0">--select--</option>
+                <option value="0">--select--</option>
                 <option value="S1">S1</option>
                 <option value="S2">S2</option>
                 <option value="S3">S3</option>
@@ -159,7 +159,7 @@
             <div class="service-item">
               <h3>Selct<span>Branch</span></h3>
               <select class="form-control" name="branch">
-                <<option value="0">--select--</option>
+                <option value="0">--select--</option>
                 <option value="CSE">Computer Science</option>
                 <option value="MECHANICAL">Mechanical</option>
                 <option value="EEE">Electrical</option>
