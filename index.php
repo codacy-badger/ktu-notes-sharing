@@ -15,6 +15,8 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="dist/bootstrap-tagsinput.css">
+  <link rel="stylesheet" type="text/css" href="dist/bootstrap-tagsinput-typeahead.css">
 
 </head>
 
@@ -136,7 +138,8 @@
       <form action="upload.php" method="post" name="upload" enctype="multipart/form-data">
 
       <div class="container">
-        <div class="row">
+        <div class="row">  <!-- Modal -->
+
           <div class="col-md-12 text-center">
             <h2 class="service-title pad-bt15">Upload Notes</h2>
             <p class="sub-title pad-bt15">Upload Your Notes Here</p>
@@ -155,6 +158,7 @@
               </select>
             </div>
           </div>
+
           <div class="col-md-5 col-sm-6 col-xs-12">
             <div class="service-item">
               <h3>Selct<span>Branch</span></h3>
@@ -172,13 +176,12 @@
             <div class="service-item">
               <h3>Upload<span>Note</span></h3>
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <input type="submit" class="btn btn-download" value="Upload Note" name="submit">
+                  <input type="button" id="submitButton" class="btn btn-download" data-toggle="modal" data-target="#confirm-submit" value="Upload Note" name="submit">
             </div>
           </div>
 
         </div>
       </div>
-    </form>
 
     </section>
     <!---->
@@ -264,33 +267,7 @@
             <div class="contact-form">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="col-md-6 padding-right-zero">
-                  <div class="form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validation"></div>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
-                </div>
-              </form>
+
 
             </div>
           </div>
@@ -299,6 +276,7 @@
     </section>
     <!---->
     <!---->
+
     <footer id="footer">
       <div class="container">
         <div class="row text-center">
@@ -310,14 +288,40 @@
       </div>
     </footer>
     <!---->
+
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/wow.js"></script>
   <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/typeahead.js"></script>
   <script src="js/custom.js"></script>
+  <script src="dist/bootstrap-tagsinput-angular.js"></script>
+  <script src="dist/bootstrap-tagsinput-angular.min.js"></script>
+  <script src="dist/bootstrap-tagsinput.js"></script>
+  <script src="dist/bootstrap-tagsinput.min.js"></script>
   <script src="contactform/contactform.js"></script>
+  <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  Included Topics
+              </div>
 
+              <div class="modal-body">
+                  <p>Please input the topics included seperated by comma</p>
+                  <div class="bs">
+                    <input type="text" name="tags" data-role="tagsinput" style="display: none;">
+              </div>
+            </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-more" data-dismiss="modal">Cancel</button>
+                  <button type="submit"  class="btn btn-download">Submit</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </form>
 </body>
 </html>

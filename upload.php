@@ -3,12 +3,27 @@
 $sem="0";
 $branch="0";
 $add="";
+$temp="";
+$tag = array();
 $sem = $_POST['semester'];
+$tags = $_POST['tags'];
 $branch = $_POST['branch']; // Storing Selected Value In Variable
 $add = "notes/_public/".$sem."/".$branch."/"; // Displaying Selected Value
+$j=0;
+for ($i=0; $i <strlen($tags) ; $i++) {
+  # code...
+  while($tags[$i]!=","&&$i<strlen($tags)){
+  $temp=$temp.$tags[$i];
+  $i++;
+}
+array_push($tag,$temp);
+$temp="";
 
-echo "You have selected :" .$sem;
-echo "You have selected :" .$branch;
+$j++;
+}
+var_dump($tag);
+echo $sem;
+echo $branch;
 if($sem!="0" && $branch!="0"){
 $target_dir = $add;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
