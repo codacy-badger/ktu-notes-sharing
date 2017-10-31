@@ -24,6 +24,7 @@ $j++;
 var_dump($tag);
 echo $sem;
 echo $branch;
+
 if($sem!="0" && $branch!="0"){
 $target_dir = $add;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
