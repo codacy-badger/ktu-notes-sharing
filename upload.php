@@ -1,5 +1,16 @@
 <?php
-$target_dir = "notes/_public/";
+
+$sem="0";
+$branch="0";
+$add="";
+$sem = $_POST['semester'];
+$branch = $_POST['branch']; // Storing Selected Value In Variable
+$add = "notes/_public/".$sem."/".$branch."/"; // Displaying Selected Value
+
+echo "You have selected :" .$sem;
+echo "You have selected :" .$branch;
+if($sem!="0" && $branch!="0"){
+$target_dir = $add;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -27,5 +38,7 @@ if ($uploadOk == 0) {
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-}
+}}
+
+
 ?>

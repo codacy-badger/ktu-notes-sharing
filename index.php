@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,6 +133,8 @@
 
     <!---->
     <section id="service" class="section-padding wow fadeInUp delay-05s">
+      <form action="upload.php" method="post" name="upload" enctype="multipart/form-data">
+
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -142,27 +145,41 @@
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-item">
               <h3>Select<span>Sem</span></h3>
-
+              <select class="form-control" name="semester">
+                <<option value="0">--select--</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+                <option value="S4">S4</option>
+                <option value="S5">S5</option>
+              </select>
             </div>
           </div>
           <div class="col-md-5 col-sm-6 col-xs-12">
             <div class="service-item">
               <h3>Selct<span>Branch</span></h3>
-
+              <select class="form-control" name="branch">
+                <<option value="0">--select--</option>
+                <option value="CSE">Computer Science</option>
+                <option value="MECHANICAL">Mechanical</option>
+                <option value="EEE">Electrical</option>
+                <option value="EC">Electronics</option>
+                <option value="CIVIL">Civil</option>
+              </select>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-item">
               <h3>Upload<span>Note</span></h3>
-              <form action="upload.php" method="post" enctype="multipart/form-data">
                   <input type="file" name="fileToUpload" id="fileToUpload">
                   <input type="submit" class="btn btn-download" value="Upload Note" name="submit">
-              </form>
             </div>
           </div>
 
         </div>
       </div>
+    </form>
+
     </section>
     <!---->
     <section id="blog" class="section-padding wow fadeInUp delay-05s">
