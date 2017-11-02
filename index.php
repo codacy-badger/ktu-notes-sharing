@@ -148,8 +148,8 @@
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-item">
               <h3>Select<span>Sem</span></h3>
-              <select class="form-control" name="semester">
-                <<option value="0">--select--</option>
+              <select class="form-control" id="semester1" name="semester">
+                <option value="0">--select--</option>
                 <option value="S1">S1</option>
                 <option value="S2">S2</option>
                 <option value="S3">S3</option>
@@ -161,14 +161,13 @@
 
           <div class="col-md-5 col-sm-6 col-xs-12">
             <div class="service-item">
-              <h3>Selct<span>Branch</span></h3>
-              <select class="form-control" name="branch">
-                <<option value="0">--select--</option>
-                <option value="CSE">Computer Science</option>
-                <option value="MECHANICAL">Mechanical</option>
-                <option value="EEE">Electrical</option>
-                <option value="EC">Electronics</option>
-                <option value="CIVIL">Civil</option>
+              <h3>Select <span>S</span>tream &amp <span>S</span>ubject</h3>
+              <select class="form-control" id ="branch1" name="branch">
+
+              </select>
+              <br>
+              <select class="form-control" id="subject1" name="subject">
+
               </select>
             </div>
           </div>
@@ -297,6 +296,7 @@
   <script src="js/jquery.bxslider.min.js"></script>
   <script src="js/typeahead.js"></script>
   <script src="js/custom.js"></script>
+  <script src="js/myjs.js"></script>
   <script src="dist/bootstrap-tagsinput-angular.js"></script>
   <script src="dist/bootstrap-tagsinput-angular.min.js"></script>
   <script src="dist/bootstrap-tagsinput.js"></script>
