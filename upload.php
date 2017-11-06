@@ -1,5 +1,20 @@
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "notesktu";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+//$conn=mysqli_connect($servername,$username,$password,$dbname) or die('could not connect to database....');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+
 $sem="0";
 $branch="0";
 $add="";
@@ -27,6 +42,34 @@ $j++;
 var_dump($tag);
 echo $sem;
 echo $branch;
+$query="SELECT title FROM tags"; //Adding nicknames from leaderboard to check for pre-usage
+$data=mysqli_query($conn,$query);
+$dbtags=array();
+while($row=mysqli_fetch_array($data))
+{
+    array_push($dbtags,$row['title']);
+}
+var_dump($dbtags);
+echo sizeof($tag);
+
+for($i=0;$i<sizeof($tag);$i++){
+    if(!in_array($tag[$i],$dbtags)){
+      $sql= "insert into tags (title) values('$tag[$i]')";
+      if ($conn->query($sql) === TRUE) {
+          echo "TAG ADDED successfully";
+      } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+    }
+
+}
+
+
+if($branch=="CSE")
+  $br="Computer Science";
+
+
+
 
 if($sem!="0" && $branch!="0"){
 $target_dir = $add;
@@ -54,6 +97,21 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $fl=basename( $_FILES["fileToUpload"]["name"]);
+        $subt=$subj[$subjn-1];
+                echo $subt;
+                $path=$add."/".$fl;
+        $sql= "insert into books (name,sem,subject,branch,path) values('$fl','$sem[1]','$subt','$br','$path')";
+        if ($conn->query($sql) === TRUE) {
+            echo "BOOK ADDED successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+
+
+
+
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
