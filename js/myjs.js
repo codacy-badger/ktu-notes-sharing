@@ -14,6 +14,7 @@ $('#semester1').change(function(){
 
 
 function addbranch() {
+  $('#branch1').html('');
 
   $('#branch1').append($('<option>', {
   value: 'CSE',
@@ -48,10 +49,7 @@ function semch(){
 function subs(){
 
 
-    $('#subject1').append($('<option>', {
-    value: 'sem',
-    text: 'sem'
-    }));
+
     if (sem == 'S1'){
       $('#subject1').html('');
       for (var i = 0; i < 22; i++) {

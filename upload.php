@@ -4,11 +4,14 @@ $sem="0";
 $branch="0";
 $add="";
 $temp="";
+$subjn="";
+$subj=array('Calculus');
 $tag = array();
 $sem = $_POST['semester'];
+$subjn = $_POST['subject'];
 $tags = $_POST['tags'];
 $branch = $_POST['branch']; // Storing Selected Value In Variable
-$add = "notes/_public/".$sem."/".$branch."/"; // Displaying Selected Value
+$add = "notes/_public/".$sem."/".$branch."/".$subj[$subjn-1]."/"; // Displaying Selected Value
 $j=0;
 for ($i=0; $i <strlen($tags) ; $i++) {
   # code...
