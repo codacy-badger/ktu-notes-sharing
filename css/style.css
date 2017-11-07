@@ -296,7 +296,7 @@ ul.service-list li i
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
 }
-.visit-portfolio, .visit-portfolio:hover, .visit-portfolio:focus {
+.visit-getnotes, .visit-getnotes:hover, .visit-getnotes:focus {
     height: 50px;
     width: 175px;
     display: inline-block;
@@ -318,7 +318,7 @@ ul.service-list li i
     border: 5px solid #fff;
     margin-bottom: 15px;
 }
-.service-item h3 span
+.uploadnotes h3 span
 {
     opacity: 0.7;
     font-size: 75px;
@@ -328,17 +328,17 @@ ul.service-list li i
     font-weight: 900;
     padding-right: 6px;
 }
-.service-item h3
+.uploadnotes h3
 {
     font-weight: 700;
 }
-.service-item p
+.uploadnotes p
 {
     opacity: 0.6;
     color: inherit;
     padding: 10px 0px;
 }
-.service-item a
+.uploadnotes a
 {
     color: #be9e21;
 }
@@ -353,12 +353,12 @@ ul.service-list li i
 .bx-wrapper {
     margin: 0 auto 35px;
 }
-.portfolio-item
+.getnotes-item
 {
     position:relative;
     overflow:hidden;
 }
-.portfolio-item figure
+.getnotes-item figure
 {
     margin:0;
     padding:0;
@@ -367,13 +367,13 @@ ul.service-list li i
 		align-items: center;
     cursor:pointer;
 }
-.portfolio-item figure img {
+.getnotes-item figure img {
     display:block;
     position:relative;
     z-index:10;
     margin:-15px 0
 }
-.portfolio-item figure figcaption {
+.getnotes-item figure figcaption {
     display:block;
     position:absolute;
 		align-content: center;
@@ -382,7 +382,7 @@ ul.service-list li i
     -moz-box-sizing:border-box;
     box-sizing:border-box
 }
-.portfolio-item figure h2 {
+.getnotes-item figure h2 {
     font-family: 'Fira Sans', sans-serif;
     color:#fff;
     font-size:20px;
@@ -391,14 +391,14 @@ ul.service-list li i
     text-align:left;
     padding-bottom:15px;
 }
-.portfolio-item figure p {
+.getnotes-item figure p {
     display:block;
     line-height:18px;
     margin:0;
     color:#fff;
     text-align:left
 }
-.portfolio-item figure figcaption {
+.getnotes-item figure figcaption {
     top:0;
     left:0;
     width:100%;
@@ -414,92 +414,29 @@ ul.service-list li i
     transition:all .5s;
     text-align: center;
 }
-.portfolio-item figure img {
+.getnotes-item figure img {
     backface-visibility:hidden;
     -webkit-transition:all .5s;
     -moz-transition:all .5s;
     transition:all .5s
 }
-.portfolio-item figure:hover img,figure.hover img {
+.getnotes-item figure:hover img,figure.hover img {
     -webkit-transform:rotateY(180deg);
     -moz-transform:rotateY(180deg);
     transform:rotateY(180deg)
+		scale(2);
 }
-.portfolio-item figure:hover figcaption,figure.hover figcaption {
+.getnotes-item figure:hover figcaption,figure.hover figcaption {
     -webkit-transform:rotateY(0);
     -moz-transform:rotateY(0);
     transform:rotateY(0)
+
 }
-/***********************************
-************************************
-TESTIMONIAL
-************************************
-***********************************/
-#testimonial
-{
-    background: url('../img/bg.jpg') no-repeat;
-    background-size: cover;
-    min-height: 390px;
-}
-.bg-testicolor{
-    background-color: RGBA(73, 84, 105, 0.61);
-    min-height: 390px;
-}
+
 .white
 {
     color: #fff !important;
 }
-.testimonial-item ul li blockquote {
-    font-size: 18px;
-    line-height: 32px;
-    color: #fff;
-    font-weight: 300;
-    text-shadow: 1px 1px 2px #333;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    margin: 20px 0;
-    padding: 0 80px;
-    position: relative;
-    border: 0;
-}
-.testimonial-item ul li  small {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    text-shadow: 1px 1px 2px #333;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-}
-.bx-viewport
-{
-    height: 235px !important;
-    background-color: transparent !important;
-    border: 0px none !important;
-    box-shadow: none !important;
-}
-.testimonial-item ul li blockquote::before {
-    content: '“';
-    left: 30px;
-}
-.testimonial-item ul li blockquote::before, .testimonial-item ul li blockquote::after {
-    position: absolute;
-    font-weight: 300;
-    font-size: 3em;
-    font-family: Georgia, serif;
-    color: #ccc;
-    top: 62%;
-}
-.testimonial-item ul li blockquote::after {
-    content: '”';
-    right: 30px;
-}
-/***********************************
-************************************
-Blog
-************************************
-***********************************/
 .blog-info h2 {
     text-transform: capitalize;
     font-weight: 600;
@@ -701,10 +638,10 @@ Responsive media queries
 ************************************
 ***********************************/
 @media (min-width: 768px) and (max-width: 980px) {
-    .service-item, .blog-sec, .wrap-item, .loction-info{
+    .uploadnotes, .blog-sec, .wrap-item, .loction-info{
     margin-bottom: 15px;
 }
-.portfolio-item figure figcaption{
+.getnotes-item figure figcaption{
     padding: 55px 30px;
 }
 .padding-right-zero{
@@ -712,7 +649,7 @@ Responsive media queries
 }
 }
 @media (min-width: 451px) and (max-width: 767px) {
-    .service-item, .blog-sec, .wrap-item, .loction-info{
+    .uploadnotes, .blog-sec, .wrap-item, .loction-info{
     margin-bottom: 15px;
 }
 }
@@ -746,22 +683,22 @@ body{
 .sub-title {
     font-size: 15px;
 }
-.service-item, .blog-sec, .wrap-item, .loction-info{
+.uploadnotes, .blog-sec, .wrap-item, .loction-info{
     margin-bottom: 15px;
 }
 .loction-info{
     padding: 0px 15px;
 }
-.portfolio-item figure figcaption {
+.getnotes-item figure figcaption {
     padding: 30px 30px;
 }
 .padding-right-zero{
     padding-right: 15px !important;
 }
-.portfolio-item figure p{
+.getnotes-item figure p{
     font-size: 14px;
 }
-.portfolio-item figure h2{
+.getnotes-item figure h2{
     font-size: 18px;
 }
 .testimonial-item ul li blockquote {
@@ -778,8 +715,13 @@ body{
 
 
 .semlink{
-	font-size: 14px;
+	font-size: 20px;
 	line-height: 22px;
-	margin: 10px 0;
-	padding: 0 40px;
+color: #FFFFFF;
+
+}
+.semlink:hover{
+	color: #000000;
+	transition: all 300ms ease-in;
+ transform: scale(1.5);
 }

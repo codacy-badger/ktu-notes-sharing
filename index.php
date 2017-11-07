@@ -1,16 +1,7 @@
-<?php $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "notesktu";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+<?php include("conn.php");
 //echo "Connected successfully";
-
+$query = "select name,path from books order by id desc'";
+$result = mysqli_query($conn,$query);
 ?>
 
 
@@ -95,7 +86,7 @@ if ($conn->connect_error) {
                 <p class="sub-title pad-bt15">Select Semester</p>
                 <hr class="bottom-line">
               </div>
-              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+              <div class="col-md-4 col-sm-6 col-xs-12 getnotes-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port01.jpg" href="notes/S1/" class="img-responsive">
                   <figcaption>
@@ -110,7 +101,7 @@ if ($conn->connect_error) {
 
                 </figure>
               </div>
-              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+              <div class="col-md-4 col-sm-6 col-xs-12 getnotes-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port02.jpg" class="img-responsive">
                   <figcaption>
@@ -124,45 +115,45 @@ if ($conn->connect_error) {
                   </figcaption>
                 </figure>
               </div>
-              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+              <div class="col-md-4 col-sm-6 col-xs-12 getnotes-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port03.jpg" class="img-responsive">
                   <figcaption>
                     <h2>Select Branch<br></h2>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">CSE</a>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">Mechanical</a>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">EEE</a>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">Civil</a>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">EC</a>
-                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">IT</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=CSE">CSE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=EEE">EEE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=Civil">Civil</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=EC">EC</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>
-              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+              <div class="col-md-4 col-sm-6 col-xs-12 getnotes-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port04.jpg" class="img-responsive">
                   <figcaption>
                     <h2>Select Branch<br></h2>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">CSE</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Mechanical</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EEE</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Civil</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EC</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">IT</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=CSE">CSE</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=EEE">EEE</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=Civil">Civil</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=EC">EC</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>
-              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+              <div class="col-md-4 col-sm-6 col-xs-12 getnotes-item padding-right-zero mr-btn-15">
                 <figure>
                   <img src="img/port05.jpg" class="img-responsive">
                   <figcaption>
                     <h2>Select Branch<br></h2>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">CSE</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Mechanical</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EEE</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Civil</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EC</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">IT</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=CSE">CSE</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=EEE">EEE</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=Civil">Civil</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=EC">EC</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -185,7 +176,7 @@ if ($conn->connect_error) {
             <hr class="bottom-line">
           </div>
           <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-item">
+            <div class="uploadnotes">
               <h3>Select<span>Sem</span></h3>
               <select class="form-control" id="semester1" name="semester">
                 <option value="0">--select--</option>
@@ -199,7 +190,7 @@ if ($conn->connect_error) {
           </div>
 
           <div class="col-md-5 col-sm-6 col-xs-12">
-            <div class="service-item">
+            <div class="uploadnotes">
               <h3>Select <span>S</span>tream &amp <span>S</span>ubject</h3>
               <select class="form-control" id ="branch1" name="branch">
 
@@ -211,7 +202,7 @@ if ($conn->connect_error) {
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="service-item">
+            <div class="uploadnotes">
               <h3>Upload<span>Note</span></h3>
                   <input type="file" name="fileToUpload" id="fileToUpload">
                   <input type="button" id="submitButton" class="btn btn-download" data-toggle="modal" data-target="#confirm-submit" value="Upload Note" name="submit">
@@ -230,24 +221,36 @@ if ($conn->connect_error) {
             <h2 class="service-title pad-bt15">Latest Notes</h2>
             <p class="sub-title pad-bt15">Description.</p>
             <hr class="bottom-line">
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="blog-sec">
-              <div class="blog-img">
-                <a href="">
-                  <img src="img/blog01.jpg" class="img-responsive">
-                </a>
-              </div>
-              <div class="blog-info">
-                <h2>Note1.</h2>
-                <div class="blog-comment">
-                  <p>
-                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p>topics</p>
-              </div>
-            </div>
-          </div>
+          </div><?php
+          while ($rows = mysqli_fetch_array($result,MYSQL_ASSOC)){
+            $cnt=0;
+            foreach ($rows as $data) {
+              echo '          <div class="col-md-4 col-sm-6 col-xs-12">
+                          <div class="blog-sec">
+                            <div class="blog-img">
+                              <a href='.$rows.'">
+                                <img src="img/blog01.jpg" class="img-responsive">
+                              </a>
+                            </div>
+                            <div class="blog-info">
+                              <h2>Note1.</h2>
+                              <div class="blog-comment">
+                                <p>
+                                  <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
+                              </div>
+                              <p>topics</p>
+                            </div>
+                          </div>
+                        </div>';
+
+            }
+
+          }
+
+
+
+          ?>
+
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="blog-sec">
               <div class="blog-img">

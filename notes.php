@@ -47,10 +47,14 @@ if( $_GET["sem"] &&$_GET["bra"]) {
       <h1 align="center">Search Here</h1>
       <div class="col-xs-12 ">
           <div align="center" class="form-group">
-            <label class="radio-inline"><input name="ser" value="1" type="radio" name="optradio">Name</label>
-<label class="radio-inline"><input name="ser" type="radio" value="2" name="optradio">Subject</label>
-
-            <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search">
+            <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="ser" value="0" autocomplete="off" checked>Name</label>
+  <label class="btn btn-primary">
+    <input type="radio" name="ser" value="2" autocomplete="off">Subject</label>
+</div>
+<br><br>
+        <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search" autocomplete="off">
          </div>
       </div>
     </div>
@@ -62,16 +66,8 @@ if (($result)||(mysql_errno == 0))
   echo "<table id='maintable' class='table table-hover' ><tr>";
   if (mysqli_num_rows($result)>0)
   {
-          //loop thru the field names to print the correct headers
-          $i = 1;
-          while ($i < mysqli_num_fields($result)-2)
-          {
-            if($i==mysqli_num_fields($result)-3)
-            echo "<th>Download Links</th>";
-            else
-       echo "<th>". mysqli_field_name($result, $i) . "</th>";
-       $i++;
-    }
+    echo "<th>Name</th><th>Subject</th><th>Download Links</th>";
+
     echo "</tr>";
 
     //display the data
@@ -80,7 +76,7 @@ if (($result)||(mysql_errno == 0))
       echo "<tr>";
       $xx=0;
       foreach ($rows as $data)
-      { if($xx==0){
+      { if($xx==0||$xx==2||$xx==4){
         $xx++;
         continue;
       }
@@ -119,12 +115,25 @@ if (($result)||(mysql_errno == 0))
 <script>
 function myFunction() {
   // Declare variables
-  var input, filter, table, tr, td, i;
+  var input, filter, table, tr, td, i, ser;
   input = document.getElementById("search");
   filter = input.value.toUpperCase();
   table = document.getElementById("maintable");
   tr = table.getElementsByTagName("tr");
-  var ser = document.getElementById('ser').value;
+  var radios = document.getElementsByName('ser');
+
+  for (var i = 0, length = radios.length; i < length; i++)
+  {
+   if (radios[i].checked)
+   {
+    // do whatever you want with the checked radio
+    ser=(radios[i].value);
+
+    // only one radio can be logically checked, don't check the rest
+    break;
+   }
+  }
+  console.log(ser);
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[parseInt(ser)];
