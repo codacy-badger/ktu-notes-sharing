@@ -96,11 +96,16 @@ if ($conn->connect_error) {
                 <hr class="bottom-line">
               </div>
               <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-                <figure href="notes/S1/">
+                <figure>
                   <img src="img/port01.jpg" href="notes/S1/" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 1 Notes<br>
-                    <a href="notes/S1/">Get Here</a></h2>
+                    <h2>Select Branch<br></h2>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">CSE</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EEE</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Civil</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EC</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">IT</a>
                   </figcaption>
 
                 </figure>
@@ -109,8 +114,13 @@ if ($conn->connect_error) {
                 <figure>
                   <img src="img/port02.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 2 Notes<br>
-                    <a href="notes/S2/">Get Here</a></h2>
+                    <h2>Select Branch<br></h2>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">CSE</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EEE</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Civil</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EC</a>
+                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -118,8 +128,13 @@ if ($conn->connect_error) {
                 <figure>
                   <img src="img/port03.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 3 Notes<br>
-                    <a href="notes/S3/">Get Here</a></h2>
+                    <h2>Select Branch<br></h2>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">CSE</a>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">EEE</a>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">Civil</a>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">EC</a>
+                    <a class="semlink" href="notes.php?sem=2&bra=S1_S2_Common">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -127,8 +142,13 @@ if ($conn->connect_error) {
                 <figure>
                   <img src="img/port04.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 4 Notes<br>
-                    <a href="notes/S4/">Get Here</a></h2>
+                    <h2>Select Branch<br></h2>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">CSE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EEE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Civil</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EC</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -136,8 +156,13 @@ if ($conn->connect_error) {
                 <figure>
                   <img src="img/port05.jpg" class="img-responsive">
                   <figcaption>
-                    <h2>Semester 5 Notes<br>
-                    <a href="notes/S5/">Get Here</a></h2>
+                    <h2>Select Branch<br></h2>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">CSE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EEE</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">Civil</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">EC</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=S1_S2_Common">IT</a>
                   </figcaption>
                 </figure>
               </div>

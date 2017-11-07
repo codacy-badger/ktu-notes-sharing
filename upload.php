@@ -66,7 +66,7 @@ for($i=0;$i<sizeof($tag);$i++){
 
 if($sem=="S1"||$sem=="S2"){
   $br="S1_S2_Common";
-  $add = "notes/_public/S1_S2_Common/"; // Displaying Selected Value
+  $add = "note/S1_S2_Common/"; // Displaying Selected Value
 }
 else {
 
@@ -80,7 +80,7 @@ else {
   $br="Electronics";
   else if($branch=="CIVIL")
   $br="Civil";
-$add = "notes/_public/".$sem."/".$branch."/".$subj[$subjn-1]."/"; // Displaying Selected Value
+$add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/"; // Displaying Selected Value
 }
 
 
