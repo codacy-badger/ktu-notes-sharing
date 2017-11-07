@@ -11,7 +11,6 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
-
 ?>
 
 
@@ -24,7 +23,6 @@ echo "Connected successfully";
   <title>KTU Notes Sharing</title>
   <meta name="description" content="Get free Class Notes for KTU Engineering Students">
   <meta name="keywords" content="ktu class notes, ktu notes , notes , kerala technological university, engineering notes ">
-
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
   <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -57,9 +55,9 @@ echo "Connected successfully";
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="active"><a href="#main-header">Home</a></li>
-                  <li class=""><a href="#portfolio">Get Notes</a></li>
-                  <li class=""><a href="#service">Upload Notes</a></li>
-                  <li class=""><a href="#blog">Latest Notes</a></li>
+                  <li class=""><a href="#getnotes">Get Notes</a></li>
+                  <li class=""><a href="#uploadnotes">Upload Notes</a></li>
+                  <li class=""><a href="#noteslatest">Latest Notes</a></li>
                   <li class=""><a href="#contact">Contact Us</a></li>
                 </ul>
               </div>
@@ -74,11 +72,11 @@ echo "Connected successfully";
                 <h2 class="bnr-sub-title">KTU Notes</h2>
                 <p class="bnr-para">Description</p>
                 <div class="brn-btn">
-                  <a href="#portfolio" class="btn btn-download">Get Notes</a>
-                  <a href="#service" class="btn btn-more">Upload Notes</a>
+                  <a href="#getnotes" class="btn btn-download">Get Notes</a>
+                  <a href="#uploadnotes" class="btn btn-more">Upload Notes</a>
                 </div>
                 <div class="overlay-detail">
-                  <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                  <a href="#getnotes"><i class="fa fa-angle-down"></i></a>
                 </div>
               </div>
             </div>
@@ -89,7 +87,7 @@ echo "Connected successfully";
     <!--/ HEADER-->
 
         <!---->
-        <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+        <section id="getnotes" class="section-padding wow fadeInUp delay-05s">
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center">
@@ -150,7 +148,7 @@ echo "Connected successfully";
         <!---->
 
     <!---->
-    <section id="service" class="section-padding wow fadeInUp delay-05s">
+    <section id="uploadnotes" class="section-padding wow fadeInUp delay-05s">
       <form action="upload.php" method="post" name="upload" enctype="multipart/form-data">
 
       <div class="container">
@@ -200,7 +198,7 @@ echo "Connected successfully";
 
     </section>
     <!---->
-    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+    <section id="noteslatest" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
