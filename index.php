@@ -68,9 +68,9 @@ if ($conn->connect_error) {
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1 class="bnr-title">Get <span>KTU</span> notes</h1>
+                <h1 class="bnr-title">Get <span class="logo-dec">KTU</span> notes</h1>
                 <h2 class="bnr-sub-title">KTU Notes</h2>
-                <p class="bnr-para">Description</p>
+                <p class="bnr-para">Get the most up to date study documents you need for your engineering course</p>
                 <div class="brn-btn">
                   <a href="#getnotes" class="btn btn-download">Get Notes</a>
                   <a href="#uploadnotes" class="btn btn-more">Upload Notes</a>
