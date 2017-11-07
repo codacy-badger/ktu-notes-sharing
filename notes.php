@@ -1,4 +1,5 @@
 <?php include("conn.php");
+error_reporting(0);
 //$query = "select field1, fieldn from table [where clause][group by clause][order by clause][limit clause]";
 function mysqli_field_name($result, $field_offset)
 {
@@ -66,7 +67,7 @@ if (($result)||(mysql_errno == 0))
   echo "<table id='maintable' class='table table-hover' ><tr>";
   if (mysqli_num_rows($result)>0)
   {
-    echo "<th>Name</th><th>Subject</th><th>Download Links</th>";
+    echo "<th>Topics</th><th>Subject</th><th>Download Links</th>";
 
     echo "</tr>";
 

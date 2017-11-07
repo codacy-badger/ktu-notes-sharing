@@ -1,8 +1,4 @@
-<?php include("conn.php");
-//echo "Connected successfully";
-$query = "select name,path from books order by id desc'";
-$result = mysqli_query($conn,$query);
-?>
+
 
 
 <!DOCTYPE html>
@@ -29,7 +25,7 @@ $result = mysqli_query($conn,$query);
 
   <div class="loader"></div>
   <div id="myDiv">
-    <!--HEADER-->
+
     <div class="header">
       <div class="bg-color">
         <header id="main-header">
@@ -48,7 +44,7 @@ $result = mysqli_query($conn,$query);
                   <li class="active"><a href="#main-header">Home</a></li>
                   <li class=""><a href="#getnotes">Get Notes</a></li>
                   <li class=""><a href="#uploadnotes">Upload Notes</a></li>
-                  <li class=""><a href="#noteslatest">Latest Notes</a></li>
+
                   <li class=""><a href="#contact">Contact Us</a></li>
                 </ul>
               </div>
@@ -59,7 +55,7 @@ $result = mysqli_query($conn,$query);
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1 class="bnr-title">Get <span>KTU</span> notes</h1>
+                <h1 class="bnr-title">Get <span class="logo-dec">KTU</span> notes</h1>
                 <h2 class="bnr-sub-title">KTU Notes</h2>
                 <p class="bnr-para">Get the most up to date study documents you need for your engineering course</p>
                 <div class="brn-btn">
@@ -75,9 +71,7 @@ $result = mysqli_query($conn,$query);
         </div>
       </div>
     </div>
-    <!--/ HEADER-->
 
-        <!---->
         <section id="getnotes" class="section-padding wow fadeInUp delay-05s">
           <div class="container">
             <div class="row">
@@ -161,14 +155,12 @@ $result = mysqli_query($conn,$query);
             </div>
           </div>
         </section>
-        <!---->
 
-    <!---->
     <section id="uploadnotes" class="section-padding wow fadeInUp delay-05s">
       <form action="upload.php" method="post" name="upload" enctype="multipart/form-data">
 
       <div class="container">
-        <div class="row">  <!-- Modal -->
+        <div class="row">
 
           <div class="col-md-12 text-center">
             <h2 class="service-title pad-bt15">Upload Notes</h2>
@@ -213,83 +205,7 @@ $result = mysqli_query($conn,$query);
       </div>
 
     </section>
-    <!---->
-    <section id="noteslatest" class="section-padding wow fadeInUp delay-05s">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="service-title pad-bt15">Latest Notes</h2>
-            <p class="sub-title pad-bt15">Description.</p>
-            <hr class="bottom-line">
-          </div><?php
-          while ($rows = mysqli_fetch_array($result,MYSQL_ASSOC)){
-            $cnt=0;
-            foreach ($rows as $data) {
-              echo '          <div class="col-md-4 col-sm-6 col-xs-12">
-                          <div class="blog-sec">
-                            <div class="blog-img">
-                              <a href='.$rows.'">
-                                <img src="img/blog01.jpg" class="img-responsive">
-                              </a>
-                            </div>
-                            <div class="blog-info">
-                              <h2>Note1.</h2>
-                              <div class="blog-comment">
-                                <p>
-                                  <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                              </div>
-                              <p>topics</p>
-                            </div>
-                          </div>
-                        </div>';
-
-            }
-
-          }
-
-
-
-          ?>
-
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="blog-sec">
-              <div class="blog-img">
-                <a href="">
-                  <img src="img/blog02.jpg" class="img-responsive">
-                </a>
-              </div>
-              <div class="blog-info">
-                <h2>Note2</h2>
-                <div class="blog-comment">
-                  <p>
-                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p>Topics</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="blog-sec">
-              <div class="blog-img">
-                <a href="">
-                  <img src="img/blog03.jpg" class="img-responsive">
-                </a>
-              </div>
-              <div class="blog-info">
-                <h2>NOte3</h2>
-                <div class="blog-comment">
-                  <p>
-                    <span><a href="#"><i class="fa fa-eye"></i></a> 11</span></p>
-                </div>
-                <p>topics</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!---->
-    <section id="contact" class="section-padding wow fadeInUp delay-05s">
+        <section id="contact" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center white">
@@ -304,31 +220,22 @@ $result = mysqli_query($conn,$query);
               <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+919400406889</p>
             </div>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="contact-form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-
-
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!---->
-    <!---->
 
     <footer id="footer">
       <div class="container">
         <div class="row text-center">
-          <p>&copy; Abhi. All Rights Reserved.</p>
+          <p>&copy; </p>
           <div class="credits">
             Designed by Abhi
           </div>
         </div>
       </div>
     </footer>
-    <!---->
 
   </div>
   <script src="js/jquery.min.js"></script>

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -88,7 +88,7 @@ $add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/"; // Displaying Selected 
 
 if($sem!="0" && $branch!="0"){
 $target_dir = $add;
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir. basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -110,16 +110,28 @@ if ($uploadOk == 0) {
     $mssg2= "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+$temp = explode(".", $_FILES["uploaded_file"]["name"]);
+$extension = end($temp);
+ $filename = basename($_FILES["uploaded_file"]["name"]);
+$a=0;
+$filename="";
+ while ($a <= sizeof($tag)) {
+   $filename = $filename."-".$tag[$a];
+   $a++;
+ }
+ $filename = $filename. strrchr($filename, '.') . $extension;
+
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$filename)) {
         $mssg=  basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         $fl=basename( $_FILES["fileToUpload"]["name"]);
         $fl = str_replace(' ', '', $fl);
         $subt=$subj[$subjn-1];
               //  echo $subt;
-                $path=$add.$fl;
+                $path=$add.$filename;
 
                 //echo $fl;
-        $sql= "insert into books (name,sem,subject,branch,path) values('$fl','$sem[1]','$subt','$br','$path')";
+        $sql= "insert into books (name,sem,subject,branch,path) values('$filename','$sem[1]','$subt','$br','$path')";
         if ($conn->query($sql) === TRUE) {
             //echo "BOOK ADDED successfully";
             $msssss="i";
@@ -248,26 +260,7 @@ for ($i=0; $i <sizeof($tag) ; $i++) {
   <script src="dist/bootstrap-tagsinput.js"></script>
   <script src="dist/bootstrap-tagsinput.min.js"></script>
   <script src="contactform/contactform.js"></script>
-  <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  Included Topics
-              </div>
 
-              <div class="modal-body">
-                  <p>Please input the topics included seperated by comma</p>
-                  <div class="bs">
-                    <input type="text" name="tags" data-role="tagsinput" style="display: none;">
-              </div>
-            </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-more" data-dismiss="modal">Cancel</button>
-                  <button type="submit"  class="btn btn-download">Submit</a>
-              </div>
-          </div>
-        </div>
-      </div>
     </form>
 </body>
 </html>
