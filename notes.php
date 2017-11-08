@@ -1,5 +1,5 @@
 <?php include("conn.php");
-error_reporting(0);
+//error_reporting(0);
 //$query = "select field1, fieldn from table [where clause][group by clause][order by clause][limit clause]";
 function mysqli_field_name($result, $field_offset)
 {
@@ -12,7 +12,7 @@ if( $_GET["sem"] &&$_GET["bra"]) {
   $sem=$_GET['sem'];
   $bra=$_GET["bra"];
   $head="Sem ".$sem." / ".$bra;
-  $query = "select * from books,branch where sem='$sem' and branch.branch='$bra'";
+  $query = "select name,subject,books.id,path from books,branch where sem='$sem' and branch.branch='$bra'";
 
    }
      $result = mysqli_query($conn,$query);
@@ -22,7 +22,7 @@ if( $_GET["sem"] &&$_GET["bra"]) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KTU Notes Sharing</title>
+  <title>BETTER GRADES</title>
   <meta name="description" content="Get free Class Notes for KTU Engineering Students">
   <meta name="keywords" content="ktu class notes, ktu notes , notes , kerala technological university, engineering notes ">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
@@ -39,7 +39,7 @@ if( $_GET["sem"] &&$_GET["bra"]) {
 <body>
   <div class="container">
       <nav class="breadcrumb" dir="ltr">
-        <a class="breadcrumb-item" href="/notes"><i class="fa fa-fw fa-home fa-lg"></i> </a>
+        <a class="breadcrumb-item" href="index.php"><i class="fa fa-fw fa-home fa-lg"></i> </a>
           <a class="breadcrumb-item" ><?php echo $head  ?></a>
       </nav>
 
@@ -52,11 +52,13 @@ if( $_GET["sem"] &&$_GET["bra"]) {
             <div class="btn-group" data-toggle="buttons">
               <label class="btn">
 <p>Search by</p></label>
-  <label class="btn btn-primary active">
+  <label class="btn btn-primary ">
 
     <input type="radio" name="ser" value="0" autocomplete="off" checked>Name</label>
   <label class="btn btn-primary">
     <input type="radio" name="ser" value="1" autocomplete="off">Subject</label>
+    <label class="btn btn-primary active">
+      <input type="radio" name="ser" value="2" checked="checked" autocomplete="off">Topic</label>
 </div>
 <br><br>
         <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search" autocomplete="off">
@@ -71,7 +73,7 @@ if (($result)||(mysql_errno == 0))
   echo "<table id='maintable' class='table table-hover' ><tr>";
   if (mysqli_num_rows($result)>0)
   {
-    echo "<th>Topics</th><th>Subject</th><th>Download Links</th>";
+    echo "<th>Name</th><th>Subject</th><th>Topics</th><th>Download Links</th>";
 
     echo "</tr>";
 
@@ -81,12 +83,20 @@ if (($result)||(mysql_errno == 0))
       echo "<tr>";
       $xx=0;
       foreach ($rows as $data)
-      { if($xx==0||$xx==2||$xx==4){
-        $xx++;
-        continue;
+      {
+        if($xx==2){
+        $qq="";
+        $query1 = "select title from tags where tag in(select tagid from tagrel where bookid='$data')";
+        $result1 = mysqli_query($conn,$query1);
+        while ($rows = mysqli_fetch_array($result1,MYSQL_ASSOC)){
+          foreach ($rows as $data){
+          $qq=$qq." ".$data;
+          }
+        }
+echo "<td>".$qq." </td>";
       }
 
-        else if($xx==5)
+        else if($xx==3)
         echo "<td ><a href='". $data . "'>Download Here</a></td>";
         else
         echo "<td >".$data."</td>";

@@ -7,6 +7,8 @@ $dbname = "notesktu";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+$connn=mysqli_connect($servername,$username,$password,$dbname);
 //$conn=mysqli_connect($servername,$username,$password,$dbname) or die('could not connect to database....');
 // Check connection
 if ($conn->connect_error) {
@@ -58,7 +60,7 @@ for($i=0;$i<sizeof($tag);$i++){
     if(!in_array($tag[$i],$dbtags)){
       $sql= "insert into tags (title) values('$tag[$i]')";
       if ($conn->query($sql) === TRUE) {
-          $mssg= "TAG ADDED successfully";
+          $mssg1= "TAG ADDED successfully";
       }
     }
 
@@ -95,7 +97,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Check if file already exists
 if (file_exists($target_file)) {
-    $mssg1= "Sorry, file already exists.";
+    $mssg= "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
@@ -115,15 +117,18 @@ $temp = explode(".", $_FILES["fileToUpload"]["name"]);
 $extension = end($temp);
  $filename = basename($_FILES["fileToUpload"]["name"]);
 $a=0;
-$filename="";
- while ($a <= sizeof($tag)) {
-   $filename = $filename."-".$tag[$a];
-   $a++;
- }
+$filename="Note";
  $filename = $filename. strrchr($filename, '.');
 
+ $sql= "select count(*) from books";
+ $dfck=mysqli_query($conn,$sql);
+ $roqw = mysqli_fetch_array($dfck);
+ $numt = $roqw['count(*)'];
+ echo $numt;
+$filename=$filename.$numt;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$filename)) {
-        $mssg=  basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $mssg1=  basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        $mssg2="Thank you for your contribution";
         $fl=basename( $_FILES["fileToUpload"]["name"]);
         $fl = str_replace(' ', '', $fl);
         $subt=$subj[$subjn-1];
@@ -142,10 +147,10 @@ $filename="";
         $row = mysqli_fetch_array($data);
         $bid = $row['id'];
         var_dump($bid);
-for ($i=0; $i <sizeof($tag) ; $i++) {
+for ($i=0; $i <=sizeof($tag) ; $i++) {
   # code...
   $tt=$tag[$i];
-  echo "LINK ADDED successfully";
+  //echo "LINK ADDED successfully";
   $sql= "select * from tags where title='$tt'";
   $data=mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($data);
@@ -153,10 +158,9 @@ for ($i=0; $i <sizeof($tag) ; $i++) {
   echo $tid;
   echo $bid;
   $sql= "insert into tagrel values('$tid','$bid')";
-  if ($conn->query($sql) === TRUE) {
-      echo "LINK ADDED successfully";
-      $mssg1="Note Uploaded successfully";
-  }
+  $fck=mysqli_query($connn,$sql);
+var_dump($fck);
+
 
 }
 
@@ -226,6 +230,7 @@ for ($i=0; $i <sizeof($tag) ; $i++) {
                 <h2 class="bnr-sub-title"><?php echo $mssg1; ?></h2>
                 <p class="bnr-para"><?php echo $mssg2; ?></p>
                 <div class="brn-btn">
+                  <a href="index.php" class="btn btn-download">Go Home</a>
                 </div>
 
               </div>
