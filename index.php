@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KTU Notes Sharing</title>
+  <title>BETTER GRADES</title>
   <meta name="description" content="Get free Class Notes for KTU Engineering Students">
   <meta name="keywords" content="ktu class notes, ktu notes , notes , kerala technological university, engineering notes ">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
@@ -37,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-                <a class="navbar-brand" href="#">KTU <span class="logo-dec">Notes</span></a>
+                <a class="navbar-brand" href="#"><span class="logo-dec">BETTER</span>NOTES</a>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -55,8 +55,8 @@
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1 class="bnr-title">Get <span class="logo-dec">KTU</span> notes</h1>
-                <h2 class="bnr-sub-title">KTU Notes</h2>
+                <h1 class="bnr-title">Get <span class="logo-dec">BETTER</span> GRADES</h1>
+                <h2 class="bnr-sub-title">ENGG Notes</h2>
                 <p class="bnr-para">Get the most up to date study documents you need for your engineering course</p>
                 <div class="brn-btn">
                   <a href="#getnotes" class="btn btn-download">Get Notes</a>

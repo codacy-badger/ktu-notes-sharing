@@ -48,11 +48,15 @@ if( $_GET["sem"] &&$_GET["bra"]) {
       <h1 align="center">Search Here</h1>
       <div class="col-xs-12 ">
           <div align="center" class="form-group">
+
             <div class="btn-group" data-toggle="buttons">
+              <label class="btn">
+<p>Search by</p></label>
   <label class="btn btn-primary active">
+
     <input type="radio" name="ser" value="0" autocomplete="off" checked>Name</label>
   <label class="btn btn-primary">
-    <input type="radio" name="ser" value="2" autocomplete="off">Subject</label>
+    <input type="radio" name="ser" value="1" autocomplete="off">Subject</label>
 </div>
 <br><br>
         <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search" autocomplete="off">

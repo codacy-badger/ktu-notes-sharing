@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -111,16 +111,16 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
 
-$temp = explode(".", $_FILES["uploaded_file"]["name"]);
+$temp = explode(".", $_FILES["fileToUpload"]["name"]);
 $extension = end($temp);
- $filename = basename($_FILES["uploaded_file"]["name"]);
+ $filename = basename($_FILES["fileToUpload"]["name"]);
 $a=0;
 $filename="";
  while ($a <= sizeof($tag)) {
    $filename = $filename."-".$tag[$a];
    $a++;
  }
- $filename = $filename. strrchr($filename, '.') . $extension;
+ $filename = $filename. strrchr($filename, '.');
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$filename)) {
         $mssg=  basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
@@ -137,21 +137,24 @@ $filename="";
             $msssss="i";
         }
 
-        $sql= "select id from books where name='$fl'";
+        $sql= "select id from books where name='$filename'";
         $data=mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($data);
         $bid = $row['id'];
-        //var_dump($bid);
+        var_dump($bid);
 for ($i=0; $i <sizeof($tag) ; $i++) {
   # code...
   $tt=$tag[$i];
+  echo "LINK ADDED successfully";
   $sql= "select * from tags where title='$tt'";
   $data=mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($data);
   $tid = $row['tag'];
+  echo $tid;
+  echo $bid;
   $sql= "insert into tagrel values('$tid','$bid')";
   if ($conn->query($sql) === TRUE) {
-      //echo "LINK ADDED successfully";
+      echo "LINK ADDED successfully";
       $mssg1="Note Uploaded successfully";
   }
 
