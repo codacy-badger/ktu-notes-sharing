@@ -115,7 +115,7 @@
                   <figcaption>
                     <h2>Select Branch<br></h2>
                     <a class="semlink" href="notes.php?sem=3&bra=CSE">CSE</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=3&bra=MECH">Mechanical</a>
                     <a class="semlink" href="notes.php?sem=3&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=3&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=3&bra=EC">EC</a>
@@ -129,7 +129,7 @@
                   <figcaption>
                     <h2>Select Branch<br></h2>
                     <a class="semlink" href="notes.php?sem=4&bra=CSE">CSE</a>
-                    <a class="semlink" href="notes.php?sem=4&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=4&bra=MECH">Mechanical</a>
                     <a class="semlink" href="notes.php?sem=4&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=4&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=4&bra=EC">EC</a>
@@ -143,7 +143,7 @@
                   <figcaption>
                     <h2>Select Branch<br></h2>
                     <a class="semlink" href="notes.php?sem=5&bra=CSE">CSE</a>
-                    <a class="semlink" href="notes.php?sem=5&bra=Mechanical">Mechanical</a>
+                    <a class="semlink" href="notes.php?sem=5&bra=MECH">Mechanical</a>
                     <a class="semlink" href="notes.php?sem=5&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=5&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=5&bra=EC">EC</a>
@@ -246,8 +246,7 @@
   <script src="js/typeahead.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/myjs.js"></script>
-  <script src="dist/bootstrap-tagsinput-angular.js"></script>
-  <script src="dist/bootstrap-tagsinput-angular.min.js"></script>
+
   <script src="dist/bootstrap-tagsinput.js"></script>
   <script src="dist/bootstrap-tagsinput.min.js"></script>
 

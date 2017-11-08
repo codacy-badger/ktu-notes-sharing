@@ -11,6 +11,7 @@ function mysqli_field_name($result, $field_offset)
 if( $_GET["sem"] &&$_GET["bra"]) {
   $sem=$_GET['sem'];
   $bra=$_GET["bra"];
+  //echo $bra;
   if($bra=="CSE")
   $bra="Computer Science";
   else if($bra=="MECH")
@@ -26,7 +27,8 @@ if( $_GET["sem"] &&$_GET["bra"]) {
   else {
     $head="Sem ".$sem." / ".$bra;
   }
-  $query = "select name,subject,books.id,path from books,branch where sem='$sem' and branch.branch='$bra'";
+  //echo $bra;
+  $query = "select name,subject,books.id,path from books where sem='$sem' and branch='$bra'";
 
    }
      $result = mysqli_query($conn,$query);
@@ -136,11 +138,9 @@ echo "<td>".$qq." </td>";
 <script src="js/typeahead.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/myjs.js"></script>
-<script src="dist/bootstrap-tagsinput-angular.js"></script>
-<script src="dist/bootstrap-tagsinput-angular.min.js"></script>
 <script src="dist/bootstrap-tagsinput.js"></script>
 <script src="dist/bootstrap-tagsinput.min.js"></script>
-<script src="contactform/contactform.js"></script>
+
 <script>
 function myFunction() {
   // Declare variables

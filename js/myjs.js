@@ -4,7 +4,9 @@ for (var i = 1; i < 200; i++) {
   s.push(i);
 }
 var s1=['Calculus','Engineering Physics','Engineering Chemistry','Engineering Mechanics','Introduction to Computing and Problem Solving','Introduction to Civil Engineering','Introduction to Mechanical Engineering','Introduction to Electrical Engineering','Introduction to Electronics Engineering','Introduction to Chemical Engineering','Introduction to Sustainable Engineering','Basics of Mechanical Engineering','Basics of Electrical Engineering','Basics of Electronics Engineering','Basics of Civil Engineering','Physics Lab','Chemistry Lab','Civil Engineering Workshop','Mechanical Engineering Workshop','Electrical Engineering Workshop','Electronics Engineering Workshop','Computer Science Engineering Workshop'];
-var s3=['Discrete Computational Structures','Switching Theory and Logic Design','Data Structures'];
+var s3=['Discrete Computational Structures','Switching Theory and Logic Design','Data Structures','Electronics Devices and Circuits','Data Structures Lab','Electronic Circuits Lab'];
+var s3me=['Mechanics of Solids','Mechanics of Fluids','Thermodynamics','Metallurgy and Materials Engineering'];
+var s3ee=['Circuits and Networks'];
 $('#semester1').change(function(){
   //do stuff here, eg.
   sem=$(this).val();
@@ -97,7 +99,7 @@ function subs(){
        text: '--select--'
        }));
        document.getElementById("submitButton").disabled = true;
-       for (var i = 0; i < 3; i++) {
+       for (var i = 0; i < 6; i++) {
          $('#subject1').append($('<option>', {
         value: s[i+22],
         text: s3[i]
@@ -105,6 +107,22 @@ function subs(){
 
      }
        }
+       if ($('#branch1').val() == 'MECH') { //check the selected option etc.
+          //do more stuff
+          $('#subject1').html('');
+          $('#subject1').append($('<option>', {
+          value: 10000,
+          text: '--select--'
+          }));
+          document.getElementById("submitButton").disabled = true;
+          for (var i = 0; i < 4; i++) {
+            $('#subject1').append($('<option>', {
+           value: s[i+28],
+           text: s3me[i]
+       }));
+
+        }
+          }
     }
 
 
@@ -172,7 +190,7 @@ if (sem == 'S2'){
      text: '--select--'
      }));
      document.getElementById("submitButton").disabled = true;
-     for (var i = 0; i < 3; i++) {
+     for (var i = 0; i < 6; i++) {
        $('#subject1').append($('<option>', {
       value: s[i+22],
       text: s3[i]
@@ -181,6 +199,24 @@ if (sem == 'S2'){
    }
 
      }
+     if ($(this).val() == 'MECH') { //check the selected option etc.
+        //do more stuff
+
+        $('#subject1').html('');
+        $('#subject1').append($('<option>', {
+        value: 10000,
+        text: '--select--'
+        }));
+        document.getElementById("submitButton").disabled = true;
+        for (var i = 0; i < 4; i++) {
+          $('#subject1').append($('<option>', {
+         value: s[i+28],
+         text: s3me[i]
+     }));
+
+      }
+
+        }
   }
 
 
