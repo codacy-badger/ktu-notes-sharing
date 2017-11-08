@@ -274,6 +274,3 @@
     </form>
 </body>
 </html>
-<?php
-$conn->close();
-?>

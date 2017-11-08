@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2017 at 03:34 AM
+-- Generation Time: Nov 08, 2017 at 04:31 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -188,8 +188,8 @@ ALTER TABLE `subjects`
 -- Indexes for table `tagrel`
 --
 ALTER TABLE `tagrel`
-  ADD PRIMARY KEY (`bookid`),
-  ADD KEY `TAGREL_fk0` (`tagid`);
+  ADD KEY `TAGREL_fk0` (`tagid`),
+  ADD KEY `TAGREL_fk1` (`bookid`);
 
 --
 -- Indexes for table `tags`
@@ -207,7 +207,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `branch`
 --
@@ -227,7 +227,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `tag` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tag` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- Constraints for dumped tables
 --
