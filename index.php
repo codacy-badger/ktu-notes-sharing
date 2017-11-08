@@ -250,7 +250,7 @@
   <script src="dist/bootstrap-tagsinput-angular.min.js"></script>
   <script src="dist/bootstrap-tagsinput.js"></script>
   <script src="dist/bootstrap-tagsinput.min.js"></script>
-  <script src="contactform/contactform.js"></script>
+
   <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">

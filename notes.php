@@ -11,7 +11,21 @@ function mysqli_field_name($result, $field_offset)
 if( $_GET["sem"] &&$_GET["bra"]) {
   $sem=$_GET['sem'];
   $bra=$_GET["bra"];
-  $head="Sem ".$sem." / ".$bra;
+  if($bra=="CSE")
+  $bra="Computer Science";
+  else if($bra=="MECH")
+  $bra="Mechanical";
+  else if($bra=="EEE")
+  $bra="Electrical";
+  else if($bra=="EC")
+  $bra="Electronics";
+  else if($bra=="CIVIL")
+  $bra="Civil";
+  if($bra=="S1_S2_Common")
+  $head="Sem ".$sem." / S1 and S2";
+  else {
+    $head="Sem ".$sem." / ".$bra;
+  }
   $query = "select name,subject,books.id,path from books,branch where sem='$sem' and branch.branch='$bra'";
 
    }

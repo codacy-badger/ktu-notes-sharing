@@ -24,7 +24,7 @@ $branch="0";
 $add="";
 $temp="";
 $subjn="";
-$subj=array('Calculus','Engineering Physics','Engineering Chemistry','Engineering Mechanics','Introduction to Computing and Problem Solving','Introduction to Civil Engineering','Introduction to Mechanical Engineering','Introduction to Electrical Engineering','Introduction to Electronics Engineering','Introduction to Chemical Engineering','Introduction to Sustainable Engineering','Basics of Mechanical Engineering','Basics of Electrical Engineering','Basics of Electronics Engineering','Basics of Civil Engineering','Physics Lab','Chemistry Lab','Civil Engineering Workshop','Mechanical Engineering Workshop','Electrical Engineering Workshop','Electronics Engineering Workshop','Computer Science Engineering Workshop');
+$subj=array('Calculus','Engineering Physics','Engineering Chemistry','Engineering Mechanics','Introduction to Computing and Problem Solving','Introduction to Civil Engineering','Introduction to Mechanical Engineering','Introduction to Electrical Engineering','Introduction to Electronics Engineering','Introduction to Chemical Engineering','Introduction to Sustainable Engineering','Basics of Mechanical Engineering','Basics of Electrical Engineering','Basics of Electronics Engineering','Basics of Civil Engineering','Physics Lab','Chemistry Lab','Civil Engineering Workshop','Mechanical Engineering Workshop','Electrical Engineering Workshop','Electronics Engineering Workshop','Computer Science Engineering Workshop','Discrete Computational Structures','Switching Theory and Logic Design','Data Structures');
 $tag = array();
 $sem = $_POST['semester'];
 $subjn = $_POST['subject'];
@@ -44,7 +44,7 @@ $temp="";
 $j++;
 }
 //var_dump($tag);
-//echo $sem;
+echo $subjn;
 //echo $branch;
 $query="SELECT title FROM tags"; //Adding nicknames from leaderboard to check for pre-usage
 $data=mysqli_query($conn,$query);
@@ -82,13 +82,14 @@ else {
   $br="Electronics";
   else if($branch=="CIVIL")
   $br="Civil";
-$add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/"; // Displaying Selected Value
+$add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/";
+echo $add; // Displaying Selected Value
 }
 
 
 
 
-if($sem!="0" && $branch!="0"){
+if($sem!="0" && $branch!="0"&&$subjn!="10000"){
 $target_dir = $add;
 $target_file = $target_dir. basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
