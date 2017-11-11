@@ -1,4 +1,89 @@
+<?php
+error_reporting(0);
+session_start();
 
+include("conn.php");
+
+if(isset($_POST['login']))
+{
+    $user_email=$_POST['email'];
+    $user_pass=$_POST['pass'];
+
+    $check_user="select * from users WHERE user_email='$user_email'AND user_pass='$user_pass'";
+
+    $run=mysqli_query($conn,$check_user);
+
+    if(mysqli_num_rows($run))
+    {
+
+
+        $_SESSION['email']=$user_email;
+
+    }
+    else
+    {
+      echo "<script>alert('Email or password is incorrect!')</script>";
+    }
+}
+
+if($_SESSION['email'])
+{
+
+    $btn_action="#confirm-submit";
+    $flag=1;
+}
+else {
+  $btn_action="#login-div";
+  $flag=0;
+}
+
+
+if(isset($_POST['register']))
+{
+    $user_name=$_POST['name'];
+    $user_pass=$_POST['pass'];
+    $user_email=$_POST['email'];
+
+
+    if($user_name=='')
+    {
+
+        echo"<script>alert('Please enter the name')</script>";
+exit();
+    }
+
+    if($user_pass=='')
+    {
+        echo"<script>alert('Please enter the password')</script>";
+exit();
+    }
+
+    if($user_email=='')
+    {
+        echo"<script>alert('Please enter the email')</script>";
+    exit();
+    }
+    $check_email_query="select * from users WHERE user_email='$user_email'";
+    $run_query=mysqli_query($conn,$check_email_query);
+
+    if(mysqli_num_rows($run_query)>0)
+    {
+echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";
+exit();
+    }
+    $insert_user="insert into users (user_name,user_pass,user_email) VALUE ('$user_name','$user_pass','$user_email')";
+    if(mysqli_query($conn,$insert_user))
+    {
+        echo"<script>window.alert('SIGN UP Successful')</script>";
+    }
+
+
+
+}
+
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -44,8 +129,15 @@
                   <li class="active"><a href="#main-header">Home</a></li>
                   <li class=""><a href="#getnotes">Get Notes</a></li>
                   <li class=""><a href="#uploadnotes">Upload Notes</a></li>
-
                   <li class=""><a href="#contact">Contact Us</a></li>
+                  <?php if($flag==0){
+                  echo "<li class=''><a data-toggle='modal' data-target='#login-div'>Login</a></li>";
+                  echo "<li class=''><a data-toggle='modal' data-target='#signup-div'>Sign Up</a></li>";
+                }
+                else {
+                  echo "<li class=''><a href='logout.php' >Log Out</a></li>";
+                }
+                   ?>
                 </ul>
               </div>
             </div>
@@ -197,7 +289,7 @@
             <div class="uploadnotes">
               <h3>Upload<span>Note</span></h3>
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <input type="button" id="submitButton" class="btn btn-download" data-toggle="modal" data-target="#confirm-submit" value="Upload Note" name="submit">
+                  <input type="button" id="submitButton" class="btn btn-download" data-toggle="modal" data-target="<?php echo $btn_action ?>" value="Upload Note" name="submit">
             </div>
           </div>
 
@@ -271,5 +363,71 @@
         </div>
       </div>
     </form>
+    <div class="modal fade" id="login-div" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Login
+                </div>
+
+                <div class="modal-body">
+                  <form role="form" method="post" action="index.php">
+                      <fieldset>
+                          <div class="form-group"  >
+                              <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                          </div>
+                          <div class="form-group">
+                              <input class="form-control" placeholder="Password" name="pass" type="password" value="">
+                          </div>
+
+
+
+              </div>
+                <div class="modal-footer">
+
+                      <input class="btn btn-lg btn-download " type="submit" value="LOGIN" name="login" >
+                      <input class="btn btn-lg btn-more " type="button" value="SIGN UP" name="sign--up" >
+                  <!-- Change this to a button or input when using this as a form -->
+                <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->
+              </fieldset>
+          </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="signup-div" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Login
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="post" action="index.php">
+                          <fieldset>
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Username" name="name" type="text" autofocus>
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                              </div>
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Password" name="pass" type="password" value="">
+                              </div>
+
+                  </div>
+                    <div class="modal-footer">
+                      <input class="btn btn-lg btn-download " type="submit" value="SIGN UP" name="register" >
+
+                  </fieldset>
+              </form>
+              <!--<center><b>Already registered ?</b> <br></b><a href="login.php">Login here</a></center>-->
+
+
+                    </div>
+                </div>
+              </div>
+            </div>
 </body>
 </html>
