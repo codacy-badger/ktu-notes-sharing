@@ -32,6 +32,7 @@
             <th>User E-mail</th>
             <th>User Pass</th>
             <th>Delete User</th>
+            <th>Ban User</th>
         </tr>
         </thead>
 
@@ -57,6 +58,7 @@
             <td><?php echo $user_email;  ?></td>
             <td><?php echo $user_pass;  ?></td>
             <td><a href="delete.php?del=<?php echo $user_id ?>"><button class="btn btn-danger">Delete</button></a></td>
+            <td><a href="ban.php?ban=<?php echo $user_id ?>"><button class="btn btn-danger">Ban</button></a></td>
         </tr>
 
         <?php } ?>

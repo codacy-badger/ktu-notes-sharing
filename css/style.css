@@ -86,13 +86,13 @@ HEADER
 .header{
     background: url('../img/bg-banner02.jpg') no-repeat fixed;
     background-size: cover;
-    min-height: 650px;
+    min-height: 700px;
     position: relative;
 }
 .bg-color
 {
     background-color: rgba(0, 0, 0, 0.5);
-    min-height: 650px;
+    min-height: 750px;
 }
 #main-header
 {
@@ -214,6 +214,20 @@ h2.bnr-sub-title
     background: #be9e21;
     color: #fff;
 }
+
+.btn-more1, .btn-more1:focus
+{
+
+    border: 1px solid #be9e21;
+    color: #be9e21;
+}
+
+.btn-more1:hover {
+    background: #be9e21;
+    color: #fff;
+}
+
+
 
 .overlay-detail a i{
    text-align: center;

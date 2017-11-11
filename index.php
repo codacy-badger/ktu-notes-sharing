@@ -71,6 +71,15 @@ exit();
 echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";
 exit();
     }
+
+    $check_email_query="select * from banned WHERE email='$user_email'";
+    $run_query=mysqli_query($conn,$check_email_query);
+
+    if(mysqli_num_rows($run_query)>0)
+    {
+echo "<script>alert('Email $user_email has been banned from BETTERGRADES !')</script>";
+exit();
+    }
     $insert_user="insert into users (user_name,user_pass,user_email) VALUE ('$user_name','$user_pass','$user_email')";
     if(mysqli_query($conn,$insert_user))
     {
@@ -367,10 +376,11 @@ exit();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    Login
+                <center>  <h2>  Login </h2></center>
                 </div>
-
                 <div class="modal-body">
+              <center>    <h3>Enter your Login Credentials</h3></center>
+              <br>
                   <form role="form" method="post" action="index.php">
                       <fieldset>
                           <div class="form-group"  >
@@ -384,11 +394,12 @@ exit();
 
               </div>
                 <div class="modal-footer">
-
+<center>
                       <input class="btn btn-lg btn-download " type="submit" value="LOGIN" name="login" >
-                      <input class="btn btn-lg btn-more " type="button" value="SIGN UP" name="sign--up" >
+                      <input class="btn btn-lg btn-more " class="close" data-dismiss="modal" type="button" value="SIGN UP" data-toggle="modal" data-target="#signup-div" name="sign--up" >
                   <!-- Change this to a button or input when using this as a form -->
                 <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->
+</center>
               </fieldset>
           </form>
                 </div>
@@ -399,10 +410,12 @@ exit();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        Login
+                      <center><h2>  Sign Up</h2></center>
                     </div>
 
                     <div class="modal-body">
+                      <center><h3>Enter your details here to sign up</h3></center>
+                      <br>
                       <form role="form" method="post" action="index.php">
                           <fieldset>
                               <div class="form-group">
@@ -418,11 +431,13 @@ exit();
 
                   </div>
                     <div class="modal-footer">
+                      <center>
                       <input class="btn btn-lg btn-download " type="submit" value="SIGN UP" name="register" >
-
+                      </center>
                   </fieldset>
               </form>
-              <!--<center><b>Already registered ?</b> <br></b><a href="login.php">Login here</a></center>-->
+              <br>
+              <center><b>Already registered ?</b> <br></b><a class="btn" href="login.php">Login here</a></center>
 
 
                     </div>
