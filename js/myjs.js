@@ -8,7 +8,7 @@ var s3=['Discrete Computational Structures','Switching Theory and Logic Design',
 var s3me=['Mechanics of Solids','Mechanics of Fluids','Thermodynamics','Metallurgy and Materials Engineering'];
 var s3ee=['Circuits and Networks'];
 $('#semester1').change(function(){
-  //do stuff here, eg.
+
   sem=$(this).val();
   addbranch();
   subs();
@@ -16,7 +16,7 @@ $('#semester1').change(function(){
 
 
 $('#subject1').change(function(){
-  //do stuff here, eg.
+
   var as=$(this).val();
 if(as=='1000')
 document.getElementById("submitButton").disabled = true;
@@ -91,8 +91,8 @@ function subs(){
 
 
     if (sem == 'S3'){
-    if ($('#branch1').val() == 'CSE') { //check the selected option etc.
-       //do more stuff
+    if ($('#branch1').val() == 'CSE') {
+       
        $('#subject1').html('');
        $('#subject1').append($('<option>', {
        value: 10000,
@@ -107,8 +107,8 @@ function subs(){
 
      }
        }
-       if ($('#branch1').val() == 'MECH') { //check the selected option etc.
-          //do more stuff
+       if ($('#branch1').val() == 'MECH') {
+
           $('#subject1').html('');
           $('#subject1').append($('<option>', {
           value: 10000,
@@ -127,8 +127,8 @@ function subs(){
 
 
   if (sem == 'S4'){
-  if ($('#semester1').val() == 'CSE') { //check the selected option etc.
-     //do more stuff
+  if ($('#semester1').val() == 'CSE') {
+
      $('#subject1').html('');
 
 
@@ -137,8 +137,8 @@ function subs(){
 
 
   if (sem == 'S5'){
-  if ($('#semester1').val() == 'CSE') { //check the selected option etc.
-     //do more stuff
+  if ($('#semester1').val() == 'CSE') {
+
      $('#subject1').html('');
 
 
@@ -151,7 +151,7 @@ function subs(){
 
 
 $('#branch1').change(function(){
-  //do stuff here, eg.
+
 
   if (sem == 'S1'){
     $('#subject1').html('');
@@ -181,8 +181,8 @@ if (sem == 'S2'){
 
 
   if (sem == 'S3'){
-  if ($(this).val() == 'CSE') { //check the selected option etc.
-     //do more stuff
+  if ($(this).val() == 'CSE') {
+
 
      $('#subject1').html('');
      $('#subject1').append($('<option>', {
@@ -199,8 +199,8 @@ if (sem == 'S2'){
    }
 
      }
-     if ($(this).val() == 'MECH') { //check the selected option etc.
-        //do more stuff
+     if ($(this).val() == 'MECH') {
+
 
         $('#subject1').html('');
         $('#subject1').append($('<option>', {
@@ -221,8 +221,8 @@ if (sem == 'S2'){
 
 
 if (sem == 'S4'){
-if ($(this).val() == 'CSE') { //check the selected option etc.
-   //do more stuff
+if ($(this).val() == 'CSE') {
+
    $('#subject1').html('');
 
 
@@ -231,8 +231,8 @@ if ($(this).val() == 'CSE') { //check the selected option etc.
 
 
 if (sem == 'S5'){
-if ($(this).val() == 'CSE') { //check the selected option etc.
-   //do more stuff
+if ($(this).val() == 'CSE') {
+
    $('#subject1').html('');
 
 

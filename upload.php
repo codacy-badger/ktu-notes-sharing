@@ -1,5 +1,5 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -44,7 +44,7 @@ $temp="";
 $j++;
 }
 //var_dump($tag);
-echo $subjn;
+//echo $subjn;
 //echo $branch;
 $query="SELECT title FROM tags"; //Adding nicknames from leaderboard to check for pre-usage
 $data=mysqli_query($conn,$query);
@@ -83,7 +83,7 @@ else {
   else if($branch=="CIVIL")
   $br="Civil";
 $add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/";
-echo $add; // Displaying Selected Value
+//echo $add; // Displaying Selected Value
 }
 
 
@@ -125,7 +125,7 @@ $filename="Note";
  $dfck=mysqli_query($conn,$sql);
  $roqw = mysqli_fetch_array($dfck);
  $numt = $roqw['count(*)'];
- echo $numt;
+ //echo $numt;
 $filename=$filename.$numt;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$filename)) {
         $mssg1=  basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
@@ -147,7 +147,7 @@ $filename=$filename.$numt;
         $data=mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($data);
         $bid = $row['id'];
-        var_dump($bid);
+        //var_dump($bid);
 for ($i=0; $i <=sizeof($tag) ; $i++) {
   # code...
   $tt=$tag[$i];
@@ -156,11 +156,11 @@ for ($i=0; $i <=sizeof($tag) ; $i++) {
   $data=mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($data);
   $tid = $row['tag'];
-  echo $tid;
-  echo $bid;
+  //echo $tid;
+  //echo $bid;
   $sql= "insert into tagrel values('$tid','$bid')";
   $fck=mysqli_query($connn,$sql);
-var_dump($fck);
+//var_dump($fck);
 
 
 }
@@ -213,7 +213,7 @@ var_dump($fck);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-                <a class="navbar-brand" href="#">KTU <span class="logo-dec">Notes</span></a>
+                <a class="navbar-brand" href="#"><span class="logo-dec">BETTER</span> GRADES</a>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">

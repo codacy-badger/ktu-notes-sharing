@@ -1,5 +1,5 @@
 <?php include("conn.php");
-//error_reporting(0);
+error_reporting(0);
 //$query = "select field1, fieldn from table [where clause][group by clause][order by clause][limit clause]";
 function mysqli_field_name($result, $field_offset)
 {
