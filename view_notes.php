@@ -1,9 +1,10 @@
 <?php
-session_start();
-error_reporting(0);
-if($_SESSION['admin'])
-{
-echo '
+if( $_GET["id"])
+  $email=$_GET['id'];
+
+
+ ?>
+
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -24,7 +25,7 @@ echo '
 <body>
 <div class="container">
 <div class="table-scrol">
-    <h1 align="center">Admin Panel</h1>
+    <h1 align="center">View Notes</h1>
     <h2 align="center"><a class="btn btn-primary" href="logout.php">Logout</a></h1>
     <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search" autocomplete="off">
 <br>
@@ -33,11 +34,13 @@ echo '
   <p>Search by</p></label>
   <label class="btn btn-primary ">
 
-  <input type="radio" name="ser" value="0" autocomplete="off" checked>Id</label>
+  <input type="radio" name="ser" value="0" autocomplete="off" checked>Name</label>
   <label class="btn btn-primary">
-  <input type="radio" name="ser" value="1" autocomplete="off">Username</label>
+  <input type="radio" name="ser" value="1" autocomplete="off">Semester</label>
   <label class="btn btn-primary active">
-  <input type="radio" name="ser" value="2" checked="checked" autocomplete="off">Email</label>
+  <input type="radio" name="ser" value="2" checked="checked" autocomplete="off">Branch</label>
+  <label class="btn btn-primary">
+  <input type="radio" name="ser" value="3" autocomplete="off">Subject</label>
   </div></center>
 
 <div class="table-responsive">
@@ -47,42 +50,38 @@ echo '
 
         <tr>
 
-            <th>User Id</th>
-            <th>User Name</th>
-            <th>User E-mail</th>
-            <th>Delete User</th>
-            <th>Ban User</th>
-            <th>View Books</th>
+            <th>Book Name</th>
+            <th>Semester</th>
+            <th>Branch</th>
+            <th>Subject</th>
         </tr>
-        </thead>';
-
+        </thead>
+        <?php
         include("conn.php");
 
-        $view_users_query="select * from users";
+        $view_users_query="select name,sem,branch,subject from books where email='$email'";
         $run=mysqli_query($conn,$view_users_query);
 
         while($row=mysqli_fetch_array($run))
         {
-            $user_id=$row[0];
-            $user_name=$row[1];
-            $user_email=$row[3];
+            $user_name=$row[0];
+            $user_sem=$row[1];
+            $user_branch=$row[2];
+            $user_subject=$row[3];
 
         ?>
 
         <tr>
-            <td><?php echo $user_id;  ?></td>
             <td><?php echo $user_name;  ?></td>
-            <td><?php echo $user_email;  ?></td>
-            <td><a href="delete.php?del=<?php echo $user_id ?>"><button class="btn btn-danger">Delete</button></a></td>
-            <td><a href="ban.php?ban=<?php echo $user_id ?>"><button class="btn btn-danger">Ban</button></a></td>
-            <td><a href="view_notes.php?id=<?php echo $user_email ?>"><button class="btn btn-primary">View</button></a></td>
+            <td><?php echo $user_sem;  ?></td>
+            <td><?php echo $user_branch;  ?></td>
+            <td><?php echo $user_subject;  ?></td>
         </tr>
 
         <?php } ?>
-
-    </table>
-        </div>
-</div>
+      </table>
+    </div>
+  </div>
 </div>
 <script>
 function myFunction() {
@@ -123,33 +122,6 @@ function myFunction() {
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+
 </body>
-
 </html>
-
-<?php }
-else {
-  echo '<html>
-  <head lang="en">
-      <meta charset="UTF-8">
-      <link type="text/css" rel="stylesheet" href="css\bootstrap.min.css">
-      <title>View Users</title>
-  </head>
-  <style>
-      .login-panel {
-          margin-top: 150px;
-      }
-      .table {
-          margin-top: 50px;
-
-      }
-
-  </style>
-
-  <body>
-  <div class="container">
-
-  <h1 align="center">OOPS!!! YOU ARE NOT SUPPOSED TO BE HERE </h1>
-  <center><a class="btn btn-danger" href="index.php">Go to Home Page</a></center>
-  </div>';
-} ?>

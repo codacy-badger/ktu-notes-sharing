@@ -1,16 +1,10 @@
 <?php
-//error_reporting(0);
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "notesktu";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+error_reporting(0);
+include("conn.php");
+session_start();
+$user_email=$_SESSION['email'];
 $connn=mysqli_connect($servername,$username,$password,$dbname);
 //$conn=mysqli_connect($servername,$username,$password,$dbname) or die('could not connect to database....');
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -29,7 +23,7 @@ $tag = array();
 $sem = $_POST['semester'];
 $subjn = $_POST['subject'];
 $tags = $_POST['tags'];
-$branch = $_POST['branch']; // Storing Selected Value In Variable
+$branch = $_POST['branch'];
 echo $branch;
 echo $subjn;
 $j=0;
@@ -47,7 +41,7 @@ $j++;
 //var_dump($tag);
 //echo $subjn;
 //echo $branch;
-$query="SELECT title FROM tags"; //Adding nicknames from leaderboard to check for pre-usage
+$query="SELECT title FROM tags";
 $data=mysqli_query($conn,$query);
 $dbtags=array();
 while($row=mysqli_fetch_array($data))
@@ -69,7 +63,7 @@ for($i=0;$i<sizeof($tag);$i++){
 
 if($sem=="S1"||$sem=="S2"){
   $br="S1_S2_Common";
-  $add = "note/S1_S2_Common/"; // Displaying Selected Value
+  $add = "note/S1_S2_Common/";
 }
 else {
 
@@ -84,7 +78,7 @@ else {
   else if($branch=="CIVIL")
   $br="Civil";
 $add = "note/".$sem."/".$branch."/".$subj[$subjn-1]."/";
-//echo $add; // Displaying Selected Value
+//echo $add;
 }
 
 
@@ -95,24 +89,23 @@ $target_dir = $add;
 $target_file = $target_dir. basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
 
-// Check if file already exists
+
 if (file_exists($target_file)) {
     $mssg= "Sorry, file already exists.";
     $uploadOk = 0;
 }
-// Check file size
 
-// Allow certain file formats
+
+
 if($imageFileType != "pdf" ) {
     $mssg= "Sorry, only PDF files are allowed.";
     $uploadOk = 0;
 }
-// Check if $uploadOk is set to 0 by an error
+
 if ($uploadOk == 0) {
     $mssg2= "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
+
 } else {
 
 $temp = explode(".", $_FILES["fileToUpload"]["name"]);
@@ -139,7 +132,7 @@ $filename=$filename.$numt;
                 $path=$add.$filename;
 
                 //echo $fl;
-        $sql= "insert into books (name,sem,subject,branch,path) values('$filename','$sem[1]','$subt','$br','$path')";
+        $sql= "insert into books (name,sem,subject,branch,path,email) values('$filename','$sem[1]','$subt','$br','$path','$user_email')";
         if ($conn->query($sql) === TRUE) {
             //echo "BOOK ADDED successfully";
             $msssss="i";
@@ -203,7 +196,7 @@ for ($i=0; $i <=sizeof($tag) ; $i++) {
 
   <div class="loader"></div>
   <div id="myDiv">
-    <!--HEADER-->
+
     <div class="header">
       <div class="bg-color">
         <header id="main-header">
@@ -242,7 +235,7 @@ for ($i=0; $i <=sizeof($tag) ; $i++) {
         </div>
       </div>
     </div>
-    <!--/ HEADER-->
+
 
 
     <footer id="footer">
@@ -255,7 +248,7 @@ for ($i=0; $i <=sizeof($tag) ; $i++) {
         </div>
       </div>
     </footer>
-    <!---->
+
 
   </div>
   <script src="js/jquery.min.js"></script>

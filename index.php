@@ -332,7 +332,7 @@ exit();
         <div class="row text-center">
           <p>&copy; </p>
           <div class="credits">
-            Designed by Abhi
+            Designed by Abhi <br><br><a class="btn btn-danger" href="admin_login.php">Admin Login</a>
           </div>
         </div>
       </div>
@@ -359,7 +359,7 @@ exit();
               </div>
 
               <div class="modal-body">
-                  <p>Please input the topics included seperated by comma</p>
+                  <p>Please input topics in the note and press enter </p>
                   <div class="bs">
                     <input type="text" name="tags" data-role="tagsinput" style="display: none;">
               </div>

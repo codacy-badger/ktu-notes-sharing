@@ -17,7 +17,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sign In</h3>
+                    <h3 class="panel-title">Admin Login</h3>
                 </div>
                 <div class="panel-body">
                     <form role="form" method="post" action="admin_login.php">
@@ -49,6 +49,7 @@
 <?php
 
 include("conn.php");
+session_start();
 
 if(isset($_POST['admin_login']))
 {
@@ -63,6 +64,7 @@ if(isset($_POST['admin_login']))
     {
 
         echo "<script>window.open('view_users.php','_self')</script>";
+          $_SESSION['admin']=$admin_name;
     }
     else {echo"<script>alert('Admin Details are incorrect..!')</script>";}
 
