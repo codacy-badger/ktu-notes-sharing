@@ -1,5 +1,6 @@
 <?php include("conn.php");
 error_reporting(0);
+session_start();
 //$query = "select field1, fieldn from table [where clause][group by clause][order by clause][limit clause]";
 function mysqli_field_name($result, $field_offset)
 {
@@ -12,6 +13,9 @@ if( $_GET["sem"] &&$_GET["bra"]) {
   $sem=$_GET['sem'];
   $bra=$_GET["bra"];
   //echo $bra;
+
+  $_SESSION['sem']=$sem;
+  $_SESSION['bra']=$bra;
   if($bra=="CSE")
   $bra="Computer Science";
   else if($bra=="MECH")
@@ -28,7 +32,7 @@ if( $_GET["sem"] &&$_GET["bra"]) {
     $head="Sem ".$sem." / ".$bra;
   }
   //echo $bra;
-  $query = "select name,subject,books.id,path from books where sem='$sem' and branch='$bra'";
+  $query = "select name,subject,books.id,path,ups,downs from books where sem='$sem' and branch='$bra'";
 
    }
      $result = mysqli_query($conn,$query);
@@ -89,7 +93,7 @@ if (($result)||(mysql_errno == 0))
   echo "<table id='maintable' class='table table-hover' ><tr>";
   if (mysqli_num_rows($result)>0)
   {
-    echo "<th>Name</th><th>Subject</th><th>Topics</th><th>Download Links</th>";
+    echo "<th>Name</th><th>Subject</th><th>Topics</th><th>Download Links</th><th>Ups</th><th>Downs</th><th>Vote</th>";
 
     echo "</tr>";
 
@@ -102,6 +106,7 @@ if (($result)||(mysql_errno == 0))
       {
         if($xx==2){
         $qq="";
+        $id_temp=$data;
         $query1 = "select title from tags where tag in(select tagid from tagrel where bookid='$data')";
         $result1 = mysqli_query($conn,$query1);
         while ($rows = mysqli_fetch_array($result1,MYSQL_ASSOC)){
@@ -118,6 +123,7 @@ echo "<td>".$qq." </td>";
         echo "<td >".$data."</td>";
         $xx++;
       }
+      echo '<td><a href="vote.php?vote=1&id='.$id_temp.'" style="color:green; text-align:left"> <i  class="fa fa-thumbs-o-up"></i></a>  <a style="color:red; text-align:right" href="vote.php?vote=0&id='.$id_temp.'"><i class="fa fa-thumbs-o-down"></i></a></td>';
     }
   }else{
     echo "<tr><td colspan='" . ($i+1) . "'>No Results found!</td></tr>";

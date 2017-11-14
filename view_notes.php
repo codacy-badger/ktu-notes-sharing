@@ -26,11 +26,14 @@ if( $_GET["id"])
 <div class="container">
 <div class="table-scrol">
     <h1 align="center">View Notes</h1>
-    <h2 align="center"><a class="btn btn-primary" href="logout.php">Logout</a></h1>
+    <h3 align="center">Viewing notes of <?php echo $email;?></h3>
+    <p align="center"><a  class="btn btn-danger" href="<?php echo 'deletebook.php?del=all&email='.$email; ?>">Delete all from User</a></p>
+    <h2 align="center"><a class="btn btn-default" href="view_users.php">Go to Admin Home</a><a class="btn btn-primary" href="logout.php">Logout</a></h1>
     <input type="text" onkeyup="myFunction()" id="search" class="form-control" placeholder="Search" autocomplete="off">
 <br>
     <center><div  class="btn-group" data-toggle="buttons">
       <label class="btn">
+
   <p>Search by</p></label>
   <label class="btn btn-primary ">
 
@@ -54,12 +57,13 @@ if( $_GET["id"])
             <th>Semester</th>
             <th>Branch</th>
             <th>Subject</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <?php
         include("conn.php");
 
-        $view_users_query="select name,sem,branch,subject from books where email='$email'";
+        $view_users_query="select name,sem,branch,subject,id from books where email='$email'";
         $run=mysqli_query($conn,$view_users_query);
 
         while($row=mysqli_fetch_array($run))
@@ -68,6 +72,7 @@ if( $_GET["id"])
             $user_sem=$row[1];
             $user_branch=$row[2];
             $user_subject=$row[3];
+            $user_id=$row[4];
 
         ?>
 
@@ -76,6 +81,7 @@ if( $_GET["id"])
             <td><?php echo $user_sem;  ?></td>
             <td><?php echo $user_branch;  ?></td>
             <td><?php echo $user_subject;  ?></td>
+            <td><a class="btn btn-danger" href="<?php echo 'deletebook.php?del='.$user_id.'&email='.$email; ?>">Delete</a></td>
         </tr>
 
         <?php } ?>

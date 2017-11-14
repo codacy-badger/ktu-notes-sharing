@@ -91,8 +91,6 @@ exit();
         echo"<script>window.open('welcome.php','_self')</script>";
     }
 
-
-
 }
 
 ?>

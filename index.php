@@ -191,7 +191,6 @@ exit();
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EEE</a>
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Civil</a>
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EC</a>
-                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">IT</a>
                   </figcaption>
 
                 </figure>
@@ -206,7 +205,6 @@ exit();
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EEE</a>
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">Civil</a>
                     <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">EC</a>
-                    <a class="semlink" href="notes.php?sem=1&bra=S1_S2_Common">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -220,7 +218,6 @@ exit();
                     <a class="semlink" href="notes.php?sem=3&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=3&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=3&bra=EC">EC</a>
-                    <a class="semlink" href="notes.php?sem=3&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -234,7 +231,6 @@ exit();
                     <a class="semlink" href="notes.php?sem=4&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=4&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=4&bra=EC">EC</a>
-                    <a class="semlink" href="notes.php?sem=4&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>
@@ -248,7 +244,6 @@ exit();
                     <a class="semlink" href="notes.php?sem=5&bra=EEE">EEE</a>
                     <a class="semlink" href="notes.php?sem=5&bra=Civil">Civil</a>
                     <a class="semlink" href="notes.php?sem=5&bra=EC">EC</a>
-                    <a class="semlink" href="notes.php?sem=5&bra=IT">IT</a>
                   </figcaption>
                 </figure>
               </div>

@@ -153,7 +153,7 @@ for ($i=0; $i <=sizeof($tag) ; $i++) {
   $tid = $row['tag'];
   //echo $tid;
   //echo $bid;
-  $sql= "insert into tagrel values('$tid','$bid')";
+  $sql= "insert into tagrel(tagid,bookid) values('$tid','$bid')";
   $fck=mysqli_query($connn,$sql);
 //var_dump($fck);
 
