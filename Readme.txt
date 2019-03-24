@@ -6,3 +6,5 @@ By
 Abhinav
 Panchami
 Sreelakshmi
+
+Codacy Badge
